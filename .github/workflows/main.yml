@@ -35,12 +35,12 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Output of required variable
-        run: echo "Output ${{ github.event_name }}"
+        run: echo "Output ${{ github.event.event_name.merged }}"
 
       - name: PUSH EVENT
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'false' }}
         run: echo "############# RUNNING TESTS ##############"
 
       - name: PULL REQUEST MERGED
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'true' }}
         run: echo "############# SKIPPING TESTS ##############"
