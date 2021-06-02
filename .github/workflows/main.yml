@@ -37,7 +37,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Output of required variable
-        run: echo "Output ->" ${{ github.event.pull_request.merged }}
+        run: echo "Output -> ${{ github.event.pull_request.merged }}"
 
       - name: PUSH EVENT
         if: github.event.pull_request.merged == false
