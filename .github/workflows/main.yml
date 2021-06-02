@@ -38,9 +38,9 @@ jobs:
         run: echo "Output =========== ${{ github.event.pull_request.merged }} haha"
 
       - name: Build with Gradle
-        if: github.event.pull_request.merged == 'false'
+        if: github.event.pull_request.merged == ' '
         run: echo "############# RUNNING TESTS ############## "
 
       - name: Build with Gradle(skip tests on merge)
-        if: github.event.pull_request.merged == ' '
+        if: github.event.pull_request.merged == 'false'
         run: echo "############# SKIPPING TESTS ############## "
