@@ -42,5 +42,5 @@ jobs:
         run: echo "############# RUNNING TESTS ##############"
 
       - name: PULL REQUEST MERGED
-        if: ${{ github.event.pull_request.merged == 'false' }}
+        if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
         run: echo "############# SKIPPING TESTS ##############"
