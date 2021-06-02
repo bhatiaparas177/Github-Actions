@@ -42,5 +42,5 @@ jobs:
         run: gradle build
 
       - name: Build with Gradle(skip tests on merge)
-        if: github.event.pull_request.merged == 'true'
-        run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+        if: github.event.pull_request.merged == 'false'
+        run: echo "############# MERGED ############## "
