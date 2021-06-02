@@ -43,4 +43,4 @@ jobs:
 
       - name: Build with Gradle(skip tests on merge)
         if: github.event.pull_request.merged == 'false'
-        run: echo "############# NOT MERGED ############## "
+        run: echo "############# MERGED ############## "
