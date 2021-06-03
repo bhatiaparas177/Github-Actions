@@ -1,4 +1,4 @@
-name: build + upload
+name: build
 
 on:
   push:
@@ -20,8 +20,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
       - name: Output of required variable
         run: echo "Output -> ${{ github.event.pull_request.merged }}"
 
