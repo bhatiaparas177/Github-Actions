@@ -11,6 +11,8 @@ on:
     tags:
       - r*
   pull_request:
+    types:
+      - closed
     branches:
       - '*'
 
@@ -20,27 +22,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
-
-      - name: Cache Gradle packages
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: ${{ runner.os }}-gradle-
-
       - name: Output of required variable
-        run: echo "Output ->" ${{ github.event.pull_request.merged }}
+        run: echo "Output -> ${{ github.event.pull_request.merged }}"
 
       - name: PUSH EVENT
-        if: github.event.pull_request.merged == false
+        if: ${{ github.event.pull_request.merged == ' ' }}
         run: echo "############# RUNNING TESTS ##############"
 
       - name: PULL REQUEST MERGED
-        if: github.event.pull_request.merged == true
+        if: ${{ github.event.pull_request.merged == 'false'}}
         run: echo "############# SKIPPING TESTS ##############"
