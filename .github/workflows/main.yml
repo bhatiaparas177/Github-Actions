@@ -27,8 +27,8 @@ jobs:
 
       - name: PUSH EVENT
         if: ${{ github.event.pull_request.merged == ' ' }}
-        run: echo "############# RUNNING TESTS ##############"
+        run: echo "RUNNING TESTS"
 
       - name: PULL REQUEST MERGED
         if: ${{ github.event.pull_request.merged }}
-        run: echo "############# SKIPPING TESTS ##############"
+        run: echo "SKIPPING TESTS"
