@@ -8,11 +8,7 @@ on:
       - 'feature/**'
       - 'hotfix/**'
       - 'aws-lambda'
-    tags:
-      - r*
   pull_request:
-    types:
-      - closed
     branches:
       - '*'
 
