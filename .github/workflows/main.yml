@@ -29,4 +29,4 @@ jobs:
 
       - name: PULL REQUEST MERGED
         if: ${{ github.event.pull_request.merged }}
-        run: echo "SKIPPING TESTS"
+        run: echo "SKIPPING TESTSS"
