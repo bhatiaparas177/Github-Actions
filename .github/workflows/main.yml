@@ -26,7 +26,7 @@ jobs:
         run: echo "Output -> ${{ github.event.pull_request.merged }}"
 
       - name: PUSH EVENT
-        if: ${{ github.event.pull_request.merged == false}}
+        if: ${{ github.event.pull_request.merged == 'false' }}
         run: echo "############# RUNNING TESTS ##############"
 
       - name: PULL REQUEST MERGED
