@@ -8,11 +8,7 @@ on:
       - 'feature/**'
       - 'hotfix/**'
       - 'aws-lambda'
-    tags:
-      - r*
   pull_request:
-    types:
-      - closed
     branches:
       - '*'
 
@@ -21,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output of required variable
-        run: echo "Output -> ${{ github.event.pull_request.merged }}"
+        run: echo "Output -> ${{ github.event }}"
 
       - name: Testing
         if: ${{ github.event.pull_request.merged !=true }}
