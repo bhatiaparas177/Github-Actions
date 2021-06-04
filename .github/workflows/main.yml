@@ -24,5 +24,5 @@ jobs:
         run: echo "RUNNING TESTS"
 
       - name: Skipping
-        if: ${{ github.event.pull_request.merged == true }}
-        run: echo "SKIPPING TESTS"
+        if: ${{ github.event.pull_request.merged == true }
+        run: echo "SKIPPING TESTSss"
