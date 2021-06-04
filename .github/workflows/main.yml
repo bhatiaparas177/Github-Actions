@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output of required variable
-        run: echo "Output -> ${{ github.event.pull_request }}"
+        run: echo "Output -> ${{ github.event.pull_request.merged }}"
 
       - name: Testing
         if: ${{ github.event.pull_request.merged !=true }}
